@@ -12,6 +12,7 @@ def load_node_config():
     try:
         node_idx = int(sys.argv[1])
         cfg = importlib.import_module("config")
+        print(cfg.__file__)
 
         BASE_PORT = cfg.ALL_PORTS[node_idx]
         PEER_PORTS = [p for p in cfg.ALL_PORTS if p != BASE_PORT]
